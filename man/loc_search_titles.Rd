@@ -4,10 +4,10 @@
 \alias{loc_search_titles}
 \title{Titles}
 \usage{
-loc_search_titles(terms, pages = 1, sleep = get_sleep())
+loc_search_titles(q, pages = 1, sleep = get_sleep())
 }
 \arguments{
-\item{terms}{Search terms}
+\item{q}{Search terms}
 
 \item{pages}{Number of pages of results to collect.}
 
