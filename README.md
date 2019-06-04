@@ -53,3 +53,13 @@ loc_search_pages("thomas")
 #> #   ocr_eng <chr>, batch <chr>, title_normal <chr>, url <chr>,
 #> #   place <list>, page <chr>
 ```
+
+The text of the newspaper is in the `ocr_eng` variable. You can reconstruct endpoints to specific newspapers, editions, or issues.
+
+```r
+a <- sample(articles$url, 1) # take a random article
+pdf <- gsub(".json", ".pdf", a) # change to PDF
+browseURL(pdf)
+```
+
+![](loc.png)
