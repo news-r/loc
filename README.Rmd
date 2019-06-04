@@ -44,10 +44,17 @@ titles <- loc_search_titles("michigan", pages = 2)
 
 The text of the newspaper is in the `ocr_eng` variable. You can reconstruct endpoints to specific newspapers, editions, or issues.
 
-```r
+```{r}
 a <- sample(articles$url, 1) # take a random article
 pdf <- gsub(".json", ".pdf", a) # change to PDF
-browseURL(pdf)
+# browseURL(pdf)
 ```
 
 ![](loc.png)
+
+And you can get the text with:
+
+```{r}
+txt <- gsub(".json", ".txt", a) # change to PDF
+readLines(txt)
+```
