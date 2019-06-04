@@ -24,8 +24,12 @@ remotes::install_github("news-r/loc")
 library(loc)
 
 # titles
-articles <- loc_search_titles("michigan", pages = 2)
+titles <- loc_search_titles("michigan", pages = 2)
 #> ℹ 9 pages available
 #> 
-  downloading [=======================================] 100%
+ downloading [========================================] 100%
+
+# pages
+pages <- loc_search_pages("Thomas Paine")
+#> ℹ 38525 pages available
 ```

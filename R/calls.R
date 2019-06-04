@@ -37,6 +37,8 @@ get_sleep <- function(){
 #' @import httr
 #' @import assertthat
 #' 
+#' @return An object of class \code{loc} which inherits from \code{list}.
+#' 
 #' @export
 loc_search_titles <- function(q, pages = 1, sleep = get_sleep()) {
   assert_that(!missing(q), msg = "Missing q")
@@ -69,7 +71,8 @@ loc_search_titles <- function(q, pages = 1, sleep = get_sleep()) {
     p <- p + 1
   }
 
-  purrr::flatten(content)
+  content <- purrr::flatten(content)
+  .construct(content)
 }
 
 #' Search
@@ -83,6 +86,8 @@ loc_search_titles <- function(q, pages = 1, sleep = get_sleep()) {
 #' 
 #' @examples
 #' \dontrun{articles <- loc_search_pages("thomas", pages = 2)}
+#' 
+#' @return An object of class \code{loc} which inherits from \code{list}.
 #' 
 #' @export
 loc_search_pages <- function(q, pages = 1, sleep = get_sleep()) {
@@ -116,5 +121,6 @@ loc_search_pages <- function(q, pages = 1, sleep = get_sleep()) {
     p <- p + 1
   }
 
-  purrr::flatten(content)
+  content <- purrr::flatten(content)
+  .construct(content)
 }

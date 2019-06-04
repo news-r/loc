@@ -34,5 +34,8 @@ remotes::install_github("news-r/loc")
 library(loc)
 
 # titles
-articles <- loc_search_titles("michigan", pages = 2)
+titles <- loc_search_titles("michigan", pages = 2)
+
+# pages
+pages <- loc_search_pages("Thomas Paine")
 ```
