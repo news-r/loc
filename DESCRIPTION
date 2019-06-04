@@ -16,6 +16,7 @@ Imports:
   httr,
   purrr,
   crayon,
+  tibble,
   progress,
   assertthat
 RoxygenNote: 6.1.1

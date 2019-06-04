@@ -37,5 +37,5 @@ library(loc)
 titles <- loc_search_titles("michigan", pages = 2)
 
 # pages
-pages <- loc_search_pages("Thomas Paine")
+loc_search_pages("thomas")
 ```

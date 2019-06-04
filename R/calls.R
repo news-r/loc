@@ -51,7 +51,7 @@ loc_search_titles <- function(q, pages = 1, sleep = get_sleep()) {
     format = " downloading [:bar] :percent",
     total = pages, clear = FALSE, width = 60)
 
-  p <- 1
+  p <- 0
   content <- list()
   while(p < pages){
     pb$tick()
@@ -98,7 +98,7 @@ loc_search_pages <- function(q, pages = 1, sleep = get_sleep()) {
     format = " downloading [:bar] :percent",
     total = pages, clear = FALSE, width = 60)
 
-  p <- 1
+  p <- 0
   content <- list()
   while(p < pages){
     pb$tick()
