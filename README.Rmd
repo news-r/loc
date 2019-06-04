@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 Access the [Library of Congress](https://chroniclingamerica.loc.gov) from R.
 
-Chronicling America provides access 140,000 historic newspapers and select digitized newspaper pages.
+> Chronicling America provides access [140,000] historic newspapers and select digitized newspaper pages.
 
 ## Installation
 
