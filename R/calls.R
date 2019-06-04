@@ -37,8 +37,6 @@ get_sleep <- function(){
 #' @import httr
 #' @import assertthat
 #' 
-#' @return An object of class \code{loc} which inherits from \code{list}.
-#' 
 #' @export
 loc_search_titles <- function(q, pages = 1, sleep = get_sleep()) {
   assert_that(!missing(q), msg = "Missing q")
@@ -53,7 +51,7 @@ loc_search_titles <- function(q, pages = 1, sleep = get_sleep()) {
     format = " downloading [:bar] :percent",
     total = pages, clear = FALSE, width = 60)
 
-  p <- 0
+  p <- 1
   content <- list()
   while(p < pages){
     pb$tick()
@@ -71,8 +69,7 @@ loc_search_titles <- function(q, pages = 1, sleep = get_sleep()) {
     p <- p + 1
   }
 
-  content <- purrr::flatten(content)
-  .construct(content)
+  .as_df(content)
 }
 
 #' Search
@@ -86,8 +83,6 @@ loc_search_titles <- function(q, pages = 1, sleep = get_sleep()) {
 #' 
 #' @examples
 #' \dontrun{articles <- loc_search_pages("thomas", pages = 2)}
-#' 
-#' @return An object of class \code{loc} which inherits from \code{list}.
 #' 
 #' @export
 loc_search_pages <- function(q, pages = 1, sleep = get_sleep()) {
@@ -103,7 +98,7 @@ loc_search_pages <- function(q, pages = 1, sleep = get_sleep()) {
     format = " downloading [:bar] :percent",
     total = pages, clear = FALSE, width = 60)
 
-  p <- 0
+  p <- 1
   content <- list()
   while(p < pages){
     pb$tick()
@@ -121,6 +116,5 @@ loc_search_pages <- function(q, pages = 1, sleep = get_sleep()) {
     p <- p + 1
   }
 
-  content <- purrr::flatten(content)
-  .construct(content)
+  .as_df(content)
 }
