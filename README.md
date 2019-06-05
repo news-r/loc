@@ -8,9 +8,9 @@
 
 # loc
 
-Access [Library of Congress](https://chroniclingamerica.loc.gov) from R.
+Access the [Library of Congress](https://chroniclingamerica.loc.gov) from R.
 
-> Chronicling America provides access to information about historic newspapers and select digitized newspaper pages.
+> Chronicling America provides access [140,000] historic newspapers and select digitized newspaper pages.
 
 ## Installation
 
@@ -32,7 +32,7 @@ titles <- loc_search_titles("michigan", pages = 2)
  downloading [========================================] 100%
 
 # pages
-loc_search_pages("thomas")
+(articles <- loc_search_pages("Thomas"))
 #> ℹ 110300 pages available
 #> # A tibble: 11 x 28
 #>    sequence county edition frequency id    subject city  date  title
@@ -58,10 +58,23 @@ loc_search_pages("thomas")
 
 The text of the newspaper is in the `ocr_eng` variable. You can reconstruct endpoints to specific newspapers, editions, or issues.
 
+
 ```r
 a <- sample(articles$url, 1) # take a random article
 pdf <- gsub(".json", ".pdf", a) # change to PDF
-browseURL(pdf)
+# browseURL(pdf)
 ```
 
 ![](loc.png)
+
+And you can get the text with:
+
+
+```r
+txt <- gsub(".json", "/ocr.txt", a) # change to PDF
+readLines(txt)
+#> Warning in readLines(txt): incomplete final line found on 'http://
+#> chroniclingamerica.loc.gov/lccn/sn85042462/1906-02-11/ed-1/seq-46/ocr.txt'
+#> [1] "> It Really Wasn'i George's Fault This Time,. But He. Got Seat Up Just the Same it!"
+#> [2] "Too Strenuous Thomas"
+```

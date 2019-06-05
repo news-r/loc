@@ -55,6 +55,6 @@ pdf <- gsub(".json", ".pdf", a) # change to PDF
 And you can get the text with:
 
 ```{r}
-txt <- gsub(".json", ".txt", a) # change to PDF
+txt <- gsub(".json", "/ocr.txt", a) # change to PDF
 readLines(txt)
 ```
