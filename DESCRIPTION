@@ -2,11 +2,12 @@ Package: loc
 Title: Access the 'Library of Congress'
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
+    c(person(given = "First",
            family = "Last",
            role = c("aut", "cre"),
            email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           comment = c(ORCID = "YOUR-ORCID-ID")),
+      person(family = "news-r", role = "cph"))
 Description: Access the 'Library of Congress'.
 License: MIT + file LICENSE
 Encoding: UTF-8
