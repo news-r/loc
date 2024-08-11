@@ -7,6 +7,9 @@ BASE_URL <- "https://chroniclingamerica.loc.gov"
     
     if(length(x) > 1)
       x <- list(x)
+    
+    if(is.list(x) & length(x) == 0)
+      x <- list("")
 
     return(x)
   })
